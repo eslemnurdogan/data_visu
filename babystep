@@ -1,0 +1,22 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+df = pd.read_csv("/content/planets.csv")
+
+df.head()
+
+plt.bar(df["Planet"], df["Mean Temperature (C)"])
+
+renkler = plt.cm.rainbow(np.linspace(0, 1, len(df["Mean Temperature (C)"]))) #
+plt.bar(df["Planet"], df["Mean Temperature (C)"], color=renkler)
+
+
+plt.xlabel("Planet")
+plt.ylabel("Mean Temperature (C)")
+plt.title("dandik grafik")
+
+plt.show()
+
+
